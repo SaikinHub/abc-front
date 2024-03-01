@@ -44,8 +44,6 @@ const NavContent = ({ setIsOpen }) => {
                     };
 
                     return (
-                        // Link to wherever
-                        // Maybe change something when it's active
                         <li
                             key={item.value}
                             onClick={() => hangleNavigate()}

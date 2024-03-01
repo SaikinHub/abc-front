@@ -44,8 +44,8 @@ const PersonalInfos = ({ initialContent }) => {
     const onSubmit = async (data) => {
         if (file) {
             const formData = new FormData();
-            formData.append('file', file); // Changer la version binary par la version objet
-            formData.append('upload_preset', 'abc-image-upload'); // Changer la version binary par la version Array
+            formData.append('file', file);
+            formData.append('upload_preset', 'abc-image-upload');
 
             await fetch(
                 'https://api.cloudinary.com/v1_1/dfaqqknvi/image/upload',

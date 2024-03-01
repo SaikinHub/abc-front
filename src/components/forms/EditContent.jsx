@@ -27,42 +27,7 @@ const EditContent = ({ onChange, type, initialContent, action }) => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const [subjects, setSubjects] = useState([
-        {
-            id: 1,
-            name: 'My little poney',
-            topic: 'English',
-            description: 'Voici ce dont est capable Saikin !',
-            posterUrl:
-                'https://www.nostalgift.com/wp-content/uploads/2020/11/ponet-heart-throb.jpg',
-            createdAt: '2024-02-13T17:23:47.000Z',
-            updatedAt: '2024-02-17T12:42:21.000Z',
-            metrics: [
-                {
-                    number: 8,
-                    title: 'chapters',
-                },
-                {
-                    number: 12,
-                    title: 'activities',
-                },
-            ],
-            metaTags: ['A Class', 'B Class'],
-        },
-        {
-            id: 3,
-            name: "S'occuper d'un enfant",
-            topic: 'English',
-            description:
-                'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
-            posterUrl:
-                'https://res.cloudinary.com/dfaqqknvi/image/upload/v1708101003/abc-image-upload/nv5atkoodnxkr3yf3nmq.jpg',
-            createdAt: '2024-02-16T16:30:04.000Z',
-            updatedAt: '2024-02-16T16:30:04.000Z',
-            metrics: [],
-            metaTags: ['A Class'],
-        },
-    ]);
+    const [subjects, setSubjects] = useState([]);
     useEffect(() => {
         const fetch = async () => {
             const result = await getAllSubjects();
@@ -218,8 +183,8 @@ const EditContent = ({ onChange, type, initialContent, action }) => {
     const onSubmit = async (data) => {
         if (file) {
             const formData = new FormData();
-            formData.append('file', file); // Changer la version binary par la version objet
-            formData.append('upload_preset', 'abc-image-upload'); // Changer la version binary par la version Array
+            formData.append('file', file);
+            formData.append('upload_preset', 'abc-image-upload');
 
             const response = await fetch(
                 'https://api.cloudinary.com/v1_1/dfaqqknvi/image/upload',
