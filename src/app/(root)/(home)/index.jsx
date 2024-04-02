@@ -29,6 +29,11 @@ const Home = () => {
 
     return (
         <section>
+            <img
+                src="/assets/images/dialog-box-placeholder.png"
+                alt="dialog box"
+                className="temp-dialog-box"
+            />
             {subjectsArr ? (
                 <ul className="browse-card__list">
                     {subjectsArr.map((item) => (

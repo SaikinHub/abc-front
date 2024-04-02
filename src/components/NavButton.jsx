@@ -1,19 +1,20 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NavButton = ({ button, showTitle }) => {
+    const navigate = useNavigate();
+    const handleNavigation = () => {
+        navigate(button.path);
+    };
     return (
         <li>
             {button.path ? (
-                <NavLink
-                    className="nav__link"
-                    key={button.value}
-                    to={button.path}
+                <button
+                    className="nav__button"
+                    onClick={() => handleNavigation()}
                 >
-                    <button className="nav__button">
-                        <img src={button.icon} alt={button.value} />
-                        {showTitle && <p>{button.title}</p>}
-                    </button>
-                </NavLink>
+                    <img src={button.icon} alt={button.value} />
+                    {showTitle && <p>{button.title}</p>}
+                </button>
             ) : (
                 <button className="nav__button">
                     <img src={button.icon} alt={button.value} />

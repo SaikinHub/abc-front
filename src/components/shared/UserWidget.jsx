@@ -26,12 +26,19 @@ const UserWidget = ({ user }) => {
                 className="authenticated-user-card"
             >
                 <div className="authenticated-user-card__image-container">
-                    <img src={user.profilePicture} alt="avatar" />
+                    <img
+                        src={
+                            user.profilePicture ??
+                            '/assets/images/default-avatar.jpg'
+                        }
+                        alt="avatar"
+                    />
                 </div>
                 <div className="authenticated-user-card__info-group">
                     <p>Welcome, {user.username} !</p>
                     <p>
-                        + <span className="highlight">{user.score}</span> pts.
+                        + <span className="highlight">{user.score}</span>{' '}
+                        {user.score > 1 ? 'pts.' : 'pt.'}
                     </p>
                 </div>
             </button>

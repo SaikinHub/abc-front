@@ -53,10 +53,12 @@ function Layout() {
                     localStorage.setItem('user', JSON.stringify(user));
                     dispatch(setUser(user));
                     dispatch(setIsAuthenticated(true));
+                    dispatch(setIsInstructor(user?.isInstructor));
                 } else {
                     const user = JSON.parse(storedUser);
                     dispatch(setUser(user));
-                    dispatch(setIsAuthenticated(user.isInstructor));
+                    dispatch(setIsAuthenticated(true));
+                    dispatch(setIsInstructor(user?.isInstructor));
                 }
             };
             userLastUpdateFetch();

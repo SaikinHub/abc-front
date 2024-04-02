@@ -11,6 +11,7 @@ import EditCourse from '../app/(root)/learn/edit/[id]';
 import CreateContent from '../app/(root)/create';
 import { LoggedIn } from './LoggedIn';
 import { Instructor } from './Instructor';
+import Watch from '../app/(root)/watch/[id]';
 
 export const router = createBrowserRouter([
     {
@@ -28,11 +29,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/subject/:id',
-                element: (
-                    <Instructor>
-                        <Subject />
-                    </Instructor>
-                ),
+                element: <Subject />,
             },
             {
                 path: '/subject/edit/:id',
@@ -43,6 +40,7 @@ export const router = createBrowserRouter([
                 ),
             },
             { path: '/learn/:id', element: <Learn /> },
+            { path: '/watch/:id', element: <Watch /> },
             {
                 path: '/learn/edit/:id',
                 element: (
@@ -71,7 +69,7 @@ export const router = createBrowserRouter([
                 path: '/create',
                 element: (
                     <Instructor>
-                        <CreateContent />{' '}
+                        <CreateContent />
                     </Instructor>
                 ),
             },

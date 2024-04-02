@@ -13,9 +13,7 @@ const NavBar = () => {
     if (isInstructor && isAuthenticated) {
         buttonsRenderer = buttons;
     } else if (isAuthenticated && !isInstructor) {
-        buttonsRenderer = buttons.filter(
-            (button) => button.loggedIn && !button.isInstructor
-        );
+        buttonsRenderer = buttons.filter((button) => !button.isInstructor);
     } else {
         buttonsRenderer = buttons.filter(
             (button) => !button.loggedIn && !button.isInstructor

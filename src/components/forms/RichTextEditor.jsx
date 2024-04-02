@@ -34,7 +34,7 @@ export const Editor = ({ onChange, initialContent, editable }) => {
         uploadFile: handleUpload,
     });
     return (
-        <div>
+        <div className="editor">
             <BlockNoteView editor={editor} />
         </div>
     );
